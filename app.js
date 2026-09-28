@@ -166,12 +166,24 @@ async function renderCalendar() {
             cell.appendChild(shiftEl);
         });
 
+        // МОДИФИКАЦИЯ: Винаги добавяме marker-area за консистентност
+        const holidayMarkerArea = document.createElement('div');
+        holidayMarkerArea.className = 'holiday-marker-area';
         if (isHoliday) {
+            // Добавяме видимия почивен маркер
             const holidayMarker = document.createElement('div');
             holidayMarker.className = 'holiday-marker';
             holidayMarker.textContent = 'Public Holiday';
-            cell.appendChild(holidayMarker);
+            holidayMarkerArea.appendChild(holidayMarker);
+        } else {
+            // Добавяме скрития placeholder, за да запазим пространството
+            const placeholderText = document.createElement('span');
+            placeholderText.className = 'placeholder-text';
+            placeholderText.innerHTML = '&nbsp;'; // Non-breaking space
+            placeholderText.style.visibility = 'hidden';
+            holidayMarkerArea.appendChild(placeholderText);
         }
+        cell.appendChild(holidayMarkerArea);
 
         calendarGrid.appendChild(cell);
     }
