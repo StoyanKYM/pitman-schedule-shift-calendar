@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift Calendar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calendar-container">
+
+        <section class="intro-section">
+            <h2 class="intro-title">The Pitman Schedule</h2>
+            <div class="intro-content">
+                <p><strong>How it works:</strong> The Pitman Schedule is a fixed 12-hour shift rotation that follows a 28-day continuous cycle.</p>
+                <p><strong>Key Benefits:</strong></p>
+                <ul>
+                    <li>⏱️ <strong>More Free Time:</strong> You work roughly 15 days a month (around 182 days a year compared to 260 in a standard 9-to-5 job).</li>
+                    <li>🗓️ <strong>Predictability:</strong> The fixed rotation allows you to plan your personal life, holidays, and vacations months or even years in advance.</li>
+                    <li>🏖️ <strong>Guaranteed Weekends Off:</strong> Every two weeks, you get a full 3-day weekend (Friday, Saturday, and Sunday) to rest and recharge.</li>
+                    <li>♻️ <strong>Fair Distribution:</strong> All teams share the exact same workload, weekends, and public holidays over time.</li>
+                </ul>
+            </div>
+        </section>
+
+        <header class="calendar-header">
+            <button id="prev-month" class="nav-btn">&#9664;</button>
+            <div class="date-selectors">
+                <select id="month-select" class="dropdown"></select>
+                <select id="year-select" class="dropdown"></select>
+            </div>
+            <button id="next-month" class="nav-btn">&#9654;</button>
+        </header>
+
+        <div class="legend">
+            <div class="legend-item"><span class="color-box blue"></span> Blue Team</div>
+            <div class="legend-item"><span class="color-box red"></span> Red Team</div>
+            <div class="legend-item"><span class="color-box green"></span> Green Team</div>
+            <div class="legend-item"><span class="color-box yellow"></span> Yellow Team</div>
+        </div>
+
+        <div class="weekdays">
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+            <div>Sun</div>
+        </div>
+
+        <div id="calendar-grid" class="calendar-grid"></div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
